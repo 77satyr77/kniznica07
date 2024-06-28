@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="sk" xmlns:th="http://www.thymeleaf.org">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<!--lang="sk"-->
 <head>
     <meta charset="UTF-8">
     <title>KNIŽNICA</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
-    <header>HLAVIČKA</header>
+    <header th:fragment="hlavicka">HLAVIČKA</header>
+
+    <main>
+        <div class="login-container">
+            <h2>Prihlásenie</h2>
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Používateľské meno" required>
+                <input type="password" name="password" placeholder="Heslo" required>
+                <button type="submit">Prihlásiť sa</button>
+            </form>
+        </div>
+    </main>
+
+    <footer th:fragment="pata">Vytvoril &copy;Ivo 2024</footer>
 
 </body>
 </html>
